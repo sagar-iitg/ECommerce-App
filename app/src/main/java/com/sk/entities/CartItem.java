@@ -1,5 +1,10 @@
 package com.sk.entities;
 
+/**
+* @author
+* Sagar Kumar
+*/
+
 import java.util.Date;
 import java.util.List;
 

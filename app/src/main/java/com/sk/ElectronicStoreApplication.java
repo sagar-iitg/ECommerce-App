@@ -1,4 +1,8 @@
 package com.sk;
+/**
+ * @author
+ * Sagar Kumar
+ */
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +11,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 import com.sk.entities.Role;
 import com.sk.repositories.RoleRepository;
@@ -54,10 +59,11 @@ public class ElectronicStoreApplication implements CommandLineRunner {
 			roleRepository.save(role_normal);
 			
 			
-			
 		}catch(Exception e)
 		{
+		
 			e.printStackTrace();
+			
 		}
 		
 	}
