@@ -1,8 +1,3 @@
-/**
- * @author
- * Sagar Kumar
- */
-
 package com.sk.config;
 
 import org.modelmapper.ModelMapper;

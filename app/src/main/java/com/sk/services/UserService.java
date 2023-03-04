@@ -1,15 +1,10 @@
 package com.sk.services;
 
-
-
+import java.io.IOException;
 import java.util.List;
-
 
 import com.sk.dtos.PageableResponse;
 import com.sk.dtos.UserDto;
-import com.sk.entities.User;
-import java.util.Optional;
-
 
 public interface UserService {
 	
@@ -45,7 +40,6 @@ public interface UserService {
 	List<UserDto> searchUser(String keyword);
 	
 	
-	Optional<User> findUserByEmailOptional(String email);
 	
 	
 	//other user specific feature

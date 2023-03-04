@@ -1,10 +1,5 @@
 package com.sk.entities;
 
-/**
-* @author
-* Sagar Kumar
-*/
-
 import java.util.ArrayList;
 import java.util.List;
 

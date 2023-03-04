@@ -1,9 +1,6 @@
 package com.sk.dtos;
 
 
-import java.util.HashSet;
-import java.util.Set;
-
 import com.sk.validate.ImageNameValid;
 
 import jakarta.validation.constraints.NotBlank;
@@ -60,7 +57,7 @@ public class UserDto {
 	
 	@ImageNameValid()
 	private String imageName;
-	private Set<RoleDto> roles=new HashSet<>();
+	
 	
 
 

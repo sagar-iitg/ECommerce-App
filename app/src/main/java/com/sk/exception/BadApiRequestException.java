@@ -1,11 +1,5 @@
 package com.sk.exception;
 
-/**
-* @author
-* Sagar Kumar
-*/
-
-
 public class BadApiRequestException extends RuntimeException{
 
 	public BadApiRequestException() {

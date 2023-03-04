@@ -1,10 +1,5 @@
 package com.sk.exception;
 
-/**
-* @author
-* Sagar Kumar
-*/
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

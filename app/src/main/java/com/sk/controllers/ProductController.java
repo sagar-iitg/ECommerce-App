@@ -1,8 +1,8 @@
 package com.sk.controllers;
 
 /**
- * @author
- * Sagar Kumar
+ * @author Sagar Kumar
+ * 
  */
 
 import java.io.IOException;
@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +35,6 @@ import com.sk.services.ProductService;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -53,7 +51,6 @@ public class ProductController {
 
 	
 	//create
-	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping
 	public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto productDto)
 	{
@@ -66,7 +63,6 @@ public class ProductController {
 	
 	
 	//update
-	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/{productId}")
 	public ResponseEntity<ProductDto> updateProduct(@RequestBody ProductDto productDto,@PathVariable("productId") String productId)
 	{
@@ -75,7 +71,6 @@ public class ProductController {
 	}
 	
 	//delete
-	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{productId}")
 	public ResponseEntity<ApiResponseMessage> deleteProduct(@PathVariable("productId") String productId)
 	{
@@ -149,7 +144,6 @@ public class ProductController {
 	
 	// upload image 
 	
-	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/image/{productId}")
 	public ResponseEntity<ImageResponse> uploadProductImage(
 			@PathVariable String productId, @RequestParam("productImage")MultipartFile image) throws IOException{

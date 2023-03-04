@@ -1,17 +1,11 @@
 package com.sk.services.impl;
 
-/**
-* @author
-* Sagar Kumar
-*/
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -23,17 +17,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import com.sk.dtos.PageableResponse;
 import com.sk.dtos.UserDto;
-import com.sk.entities.Role;
 import com.sk.entities.User;
 import com.sk.exception.ResourceNotFoundException;
 import com.sk.helper.Helper;
-import com.sk.repositories.RoleRepository;
 import com.sk.repositories.UserRepository;
 import com.sk.services.UserService;
 
@@ -59,40 +50,21 @@ public class UserServiceImpl implements UserService{
 	private String imagePath;
 	
 	private Logger logger=LoggerFactory.getLogger(UserService.class);
-	@Autowired
-	private PasswordEncoder passwordEncoder;
 	
-	@Value("${normal.role.id}")
-	private String normalRoleId;
-	
-	@Autowired
-	private RoleRepository roleRepository;
 	
 	@Override
 	public UserDto createUser(UserDto userDto) {
- 		
+		// TODO Auto-generated method stub
+		
+		
+		
 		String userId=UUID.randomUUID().toString();
 		
 		userDto.setUserId(userId);
 		
-		
-		//set encoding password
-		userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
-		
 		//dto ->entity
 		
 		User user=dtoToEntity(userDto);
-		
-		
-		
-		//fetch of normal user and set role
-		
-		Role role = roleRepository.findById(normalRoleId).get();
-		user.getRoles().add(role);
-		
-		
-		
-		
 		User savedUser=userRepository.save(user);
 		
 		
@@ -244,11 +216,6 @@ public class UserServiceImpl implements UserService{
 		
 		return mapper.map(userDto,User.class);
 		
-	}
-
-	@Override
-	public Optional<User> findUserByEmailOptional(String email) {
-		return userRepository.findByEmail(email);
 	}
 	
 	

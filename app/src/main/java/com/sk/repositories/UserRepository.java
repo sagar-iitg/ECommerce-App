@@ -1,12 +1,5 @@
 package com.sk.repositories;
 
-
-
-/**
-* @author
-* Sagar Kumar
-*/
-
 import java.util.List;
 import java.util.Optional;
 
