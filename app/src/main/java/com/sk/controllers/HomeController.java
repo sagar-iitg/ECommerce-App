@@ -1,26 +1,14 @@
-/**
- * @author
- * Sagar Kumar
- */
-
-
 package com.sk.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/")
 public class HomeController {
-	
-	
-	@GetMapping
-	public String testing() {
-		
-		return "Welcome to Electronic Store";
-		
-	}
-
+    @GetMapping
+    public String testing() {
+        return "Welcome to electronic store";
+    }
 }

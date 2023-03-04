@@ -1,8 +1,3 @@
-/**
- * @author
- * Sagar Kumar
- */
-
 package com.sk.security;
 
 import java.util.Date;
@@ -17,6 +12,8 @@ import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+
+import org.springframework.stereotype.Component;
 
 @Component
 public class JwtHelper {
@@ -53,7 +50,7 @@ public class JwtHelper {
     private Boolean isTokenExpired(String token) {
         final Date expiration = getExpirationDateFromToken(token);
         return expiration.before(new Date());
-    } 
+    }
 
     //generate token for user
     public String generateToken(UserDetails userDetails) {
