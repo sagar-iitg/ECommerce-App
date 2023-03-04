@@ -18,10 +18,10 @@ import com.sk.repositories.RoleRepository;
 
 
 @SpringBootApplication
-public class ElectronicStoreApplication implements CommandLineRunner {
+public class App implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ElectronicStoreApplication.class, args);
+		SpringApplication.run(App.class, args);
 	
 	}
 	

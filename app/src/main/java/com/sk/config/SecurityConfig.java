@@ -15,11 +15,15 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.sk.entities.User;
 import com.sk.security.JwtAuthenticationEntryPoint;
 import com.sk.security.JwtAuthenticationFilter;
 import com.sk.services.impl.CustomUserDetailService;
@@ -101,10 +105,8 @@ public class SecurityConfig {
 	
 		
 	
-	     http.csrf()
-         .disable()
-         .cors()
-         .disable().
+	     http.csrf().
+	     disable().
          authorizeHttpRequests().
          requestMatchers("/auth/login").
          permitAll(). 
@@ -159,5 +161,36 @@ public class SecurityConfig {
 		
 		 
 	}
+	
+	
+	//CORS CONFIGURATION
+	
+//	@SuppressWarnings("unchecked")
+//	@Bean
+//	public FilterRegistrationBean corsFilter() {
+//	
+//		CorsConfigurationSource source=new org.springframework.web.cors.UrlBasedCorsConfigurationSource(); 
+//		
+//		CorsConfiguration configuration=new CorsConfiguration();
+//		configuration.setAllowCredentials(true);
+//		//configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200",));
+//		configuration.addAllowedOriginPattern("*");
+//		configuration.addAllowedHeader("Authorization");
+//		configuration.addAllowedHeader("Content-Type");
+//		configuration.addAllowedHeader("Accept");
+//		
+//		configuration.addAllowedMethod("GET");
+//		configuration.addAllowedMethod("POST");
+//		configuration.addAllowedMethod("DELETE");
+//		configuration.addAllowedMethod("PUT");
+//		
+//		
+//		((UrlBasedCorsConfigurationSource) source).registerCorsConfiguration("/**", configuration);
+//		@SuppressWarnings("rawtypes")
+//		FilterRegistrationBean filterRegistrationBean=new FilterRegistrationBean(new CorsFilter(source));
+//		filterRegistrationBean.setOrder(0);
+//		
+//		return filterRegistrationBean;
+//	}
 	
 }
