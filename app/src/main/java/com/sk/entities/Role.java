@@ -1,32 +1,25 @@
-/**
- * @author
- * Sagar Kumar
- */
 package com.sk.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="roles")
+@Table(name = "roles")
 public class Role {
 
-	
-	@Id
-	private String roleId;
-	private String roleName;
-	
+
+    @Id
+    private String roleId;
+
+    private String roleName;
+
+
 }

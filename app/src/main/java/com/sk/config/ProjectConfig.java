@@ -1,8 +1,3 @@
-/**
- * @author
- * Sagar Kumar
- */
-
 package com.sk.config;
 
 import org.modelmapper.ModelMapper;
@@ -11,12 +6,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ProjectConfig {
-	
-	
-	
-	@Bean
-	public ModelMapper mapper() {
-		return new ModelMapper();
-	}
+
+    @Bean
+    public ModelMapper mapper(){
+        return new ModelMapper();
+    }
 
 }

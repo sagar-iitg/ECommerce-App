@@ -1,25 +1,13 @@
-/**
- * @author
- * Sagar Kumar
- */
 package com.sk.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class RoleDto {
-
-	
-	
-	private String roleId;
-	private String roleName;
-	
+    private String roleId;
+    private String roleName;
 }
