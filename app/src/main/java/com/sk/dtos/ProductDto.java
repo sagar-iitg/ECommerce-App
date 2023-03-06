@@ -2,8 +2,6 @@ package com.sk.dtos;
 
 import java.util.Date;
 
-import com.sk.entities.Category;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

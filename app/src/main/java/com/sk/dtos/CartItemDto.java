@@ -1,12 +1,5 @@
 package com.sk.dtos;
 
-import java.util.Date;
-import java.util.List;
-
-import com.sk.entities.Cart;
-import com.sk.entities.CartItem;
-import com.sk.entities.User;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

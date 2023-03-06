@@ -42,5 +42,10 @@ http://localhost:9090/carts/2a32a9e1-babb-47f5-8eee-1620737791d3
 
 
 
+## misc
 
+HomePage
+
+GET
+http://localhost:9090
 

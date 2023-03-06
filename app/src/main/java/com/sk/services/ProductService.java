@@ -1,7 +1,5 @@
 package com.sk.services;
 
-import java.util.List;
-
 import com.sk.dtos.PageableResponse;
 import com.sk.dtos.ProductDto;
 
