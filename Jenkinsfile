@@ -25,6 +25,18 @@ pipeline {
             
         }
         
+            stage('change directory'){
+             steps {
+              
+                   
+                   sh "pwd"
+                   sh "cd app"
+                
+            }
+         
+            
+        }
+        
           
         stage('Deploy'){
              steps {
