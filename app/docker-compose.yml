@@ -7,17 +7,22 @@ services:
 
   db:
     image: mysql
+    container_name: mysqldb
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: electronic_store
     ports:
-      - '3307:3306'
+      - '3308:3306'
     volumes:
       - mydb:/var/lib/mysql
-  web:
+  ecom:
     build: .
     #image: "sagarkumar99/foodapp:latest"
     ports:
-      - "8081:8080"
+      - "9091:9090"
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_PORT: 3306
 
 volumes:
   mydb:
