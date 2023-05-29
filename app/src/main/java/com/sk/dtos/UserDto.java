@@ -27,7 +27,7 @@ public class UserDto {
 
 	private String userId;
 	
-	@Size(min=3,max=50,message="Invalid name")
+	@Size(min=3,max=50,message="Invalid name: minimum size 3 and max 50")
 	private String name;
 	
 	
@@ -36,13 +36,7 @@ public class UserDto {
 	@Pattern(regexp="^[a-z0-9][-a-z0-9._]+@([-a-z0-9]+\\.)+[a-z]{2,5}$",message="Invalid User regex Email")
 	@NotBlank(message="Email is required!!")
 	private String email;
-	 	
-
-
-	
-
-
-
+	 	 
 	@NotBlank(message="password is required")
 	private String password;
 	
@@ -53,8 +47,11 @@ public class UserDto {
 	private String about;
 	
 	
-	//@Pattern @Custom Validator
+	//Pattern - Regular Expression
 	
+	
+	
+	// Custom Validator
 	@ImageNameValid()
 	private String imageName;
 	

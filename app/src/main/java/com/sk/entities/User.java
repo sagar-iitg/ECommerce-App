@@ -28,12 +28,9 @@ import lombok.Setter;
 @Builder
 
 @Entity
+//changing name of table in db
 @Table(name="users")
 public class User {
-	
-	
-
-	
 	
 	@Id
 	private String userId;
@@ -46,6 +43,7 @@ public class User {
 	
 	@Column(name="user_password",length=10)
 	private String password;
+	
 	private String gender;
 	
 	@Column(length=1000)

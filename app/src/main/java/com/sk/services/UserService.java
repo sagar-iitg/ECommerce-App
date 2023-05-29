@@ -1,6 +1,5 @@
 package com.sk.services;
 
-import java.io.IOException;
 import java.util.List;
 
 import com.sk.dtos.PageableResponse;

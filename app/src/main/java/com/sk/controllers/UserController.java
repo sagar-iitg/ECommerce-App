@@ -1,7 +1,6 @@
 package com.sk.controllers;
 
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -10,9 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
@@ -59,8 +56,9 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
 
-		UserDto userDto1 = userService.createUser(userDto);
-		return new ResponseEntity<>(userDto1, HttpStatus.CREATED);
+		UserDto createNewUser = userService.createUser(userDto);
+		createNewUser.setPassword("*********");
+		return new ResponseEntity<>(createNewUser, HttpStatus.CREATED);
 
 	}
 
@@ -68,7 +66,8 @@ public class UserController {
 
 	@PutMapping("/{userId}")
 	public ResponseEntity<UserDto> updateUser(@PathVariable("userId") String userId,
-			@Valid @RequestBody UserDto userDto) {
+			@Valid @RequestBody UserDto userDto) 
+	{
 
 		UserDto updatedUserDto = userService.updateUser(userDto, userId);
 		return new ResponseEntity<>(updatedUserDto, HttpStatus.OK);
@@ -80,10 +79,14 @@ public class UserController {
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponseMessage> deleteUser(@PathVariable("userId") String userId) {
 
-		ApiResponseMessage msg = ApiResponseMessage.builder().message("User is deleted successfully").success(true)
-				.status(HttpStatus.OK).build();
 
 		userService.deleteUser(userId);
+		ApiResponseMessage msg = ApiResponseMessage.
+				builder().
+				message("User is deleted successfully").
+				success(true)
+				.status(HttpStatus.OK).build();
+
 		return new ResponseEntity<>(msg, HttpStatus.OK);
 
 	}
@@ -95,7 +98,7 @@ public class UserController {
 			@RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize,
 			@RequestParam(value = "sortBy", defaultValue = "name", required = false) String sortBy,
 			@RequestParam(value = "sortDir", defaultValue = "asc", required = false) String sortDir) {
-
+		
 		return new ResponseEntity<>(userService.getAllUser(pageNumber, pageSize, sortBy, sortDir), HttpStatus.OK);
 
 	}
@@ -105,12 +108,14 @@ public class UserController {
 	@GetMapping("/{userId}")
 
 	public ResponseEntity<UserDto> getUser(@PathVariable String userId) {
-		return new ResponseEntity<>(userService.getUserById(userId), HttpStatus.OK);
+		UserDto getUserById=userService.getUserById(userId);
+		getUserById.setPassword("*****");
+		return new ResponseEntity<>(getUserById, HttpStatus.OK);
 	}
 
 	// get by mail
 
-	@GetMapping("/email/{emailId}")
+	@GetMapping("/email/{emailId}") 
 	public ResponseEntity<UserDto> getUserByEmail(@PathVariable String emailId) {
 		return new ResponseEntity<>(userService.getUserByEmail(emailId), HttpStatus.OK);
 	}
