@@ -13,7 +13,7 @@ public class HomeController {
 	@GetMapping
 	public String testing() {
 		
-		return "Welcome to ECommerece Application";
+		return "Welcome to ECommerece Backend Application";
 		
 	}
 

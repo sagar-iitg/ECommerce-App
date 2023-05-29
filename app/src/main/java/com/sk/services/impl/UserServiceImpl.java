@@ -67,8 +67,8 @@ public class UserServiceImpl implements UserService{
 		User user=dtoToEntity(userDto);
 		User savedUser=userRepository.save(user);
 		
-		
-		//
+		//userDto.setPassword("*****");
+		//entity to dto
 		UserDto newDto=entityToDto(savedUser);
 		return newDto;
 		
@@ -92,6 +92,7 @@ public class UserServiceImpl implements UserService{
 		
 		
 		 User updatedUser=userRepository.save(user);
+		//	userDto.setPassword("*****");
 		 UserDto updatedDto=entityToDto(updatedUser);
 		 
 		
@@ -152,6 +153,7 @@ public class UserServiceImpl implements UserService{
 		
 		Pageable pageable=PageRequest.of(pageNumber, pageSize,sort);
 		Page<User> page=userRepository.findAll(pageable);
+		//userDto.setPassword("*****");
 		PageableResponse<UserDto> response=Helper.getPageableResponse(page, UserDto.class);
 		
 		return response;
@@ -187,6 +189,8 @@ public class UserServiceImpl implements UserService{
 		return entityToDto(user);
 	}
 
+	//findByNameContaining
+	//search query by name containing
 	@Override
 	public List<UserDto> searchUser(String keyword) {
 		// TODO Auto-generated method stub
