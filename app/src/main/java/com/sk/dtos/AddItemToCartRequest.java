@@ -6,17 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
-@Setter
-@Getter
 @NoArgsConstructor
-
+@Getter
+@Setter
 public class AddItemToCartRequest {
-	
-	
-	private String productId;
-	private int quantity;
-	
 
-	
-	
+    private  String productId;
+
+    private  int quantity;
+
 }

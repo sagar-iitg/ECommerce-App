@@ -1,28 +1,18 @@
-/**
- * @author
- * Sagar Kumar
- */
 package com.sk.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @ToString
-public class JwtRequest 
-{
-	
-	private String email;
-	private String password;
-	
-	
+public class JwtRequest {
+
+    private String email;
+    private String password;
 
 }

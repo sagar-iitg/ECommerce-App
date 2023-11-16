@@ -1,42 +1,35 @@
-/**
- * @author
- * Sagar Kumar
- */
 package com.sk.dtos;
 
-import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
+import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @ToString
+public class CreateOrderRequest {
 
-public class CreateOrderRequest 
-{
-	
+    @NotBlank(message = "Cart id is required !!")
+    private String cartId;
 
-	@NotBlank(message="cart is required!! ")
-	private String cartId;
-	@NotBlank(message="userId is required")
-	private String userId;
-	
-	private String orderStatus="PENDING";
-	private String paymentStatus="NOTPAID";
-	
-	@NotBlank(message="Addres  is required")
-	private String billingAddress;
-	@NotBlank(message="phone no is required")
-	private String billingPhone;
-	@NotBlank(message="billing name is required")
-	private String billingName;
-	
+    @NotBlank(message = "Cart id is required !!")
+    private String userId;
+
+
+    private String orderStatus = "PENDING";
+    private String paymentStatus = "NOTPAID";
+    @NotBlank(message = "Address is required !!")
+    private String billingAddress;
+    @NotBlank(message = "Phone number is required !!")
+    private String billingPhone;
+    @NotBlank(message = "Billing name  is required !!")
+    private String billingName;
+
 
 }
