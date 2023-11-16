@@ -9,9 +9,9 @@
 	</parent>
 	<groupId>com.sk</groupId>
 	<artifactId>ElectronicStore</artifactId>
-
 	<name>ElectronicStore</name>
 	<description>Backend Project This is Ecommerce Website for Electronic store</description>
+
 	<properties>
 		<java.version>17</java.version>
 	</properties>
