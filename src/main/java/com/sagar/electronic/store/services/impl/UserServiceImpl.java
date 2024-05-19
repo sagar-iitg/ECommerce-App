@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+    //RoleRepository
 
     @Autowired
     private ModelMapper mapper;
@@ -98,6 +99,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User not found with given id !!"));
         //delete user profile image
         //images/user/abc.png
+        logger.info("delete user method");
         String fullPath = imagePath + user.getImageName();
 
         try {
@@ -107,6 +109,7 @@ public class UserServiceImpl implements UserService {
             logger.info("User image not found in folder");
             ex.printStackTrace();
         } catch (IOException e) {
+            logger.info("User image not found in folder IO Exception");
             e.printStackTrace();
         }
 
