@@ -97,6 +97,7 @@ public class SecurityConfig {
                                 .permitAll()
                                 .requestMatchers(HttpMethod.POST, "/users")
                                 .permitAll()
+                                .requestMatchers(HttpMethod.PUT,"/users").permitAll()
                                 .requestMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN")
                                 .requestMatchers(PUBLIC_URLS)
                                 .permitAll()
