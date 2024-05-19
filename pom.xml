@@ -10,9 +10,9 @@
     </parent>
 
 
-    <groupId>com.lcwd.electronic.store</groupId>
+    <groupId>com.sagar.electronic.store</groupId>
     <artifactId>ElectronicStore</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>ElectronicStore</name>
     <description>Backend project for electronic store</description>
     <properties>
