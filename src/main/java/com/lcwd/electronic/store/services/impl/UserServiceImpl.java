@@ -80,6 +80,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User not found with given id !!"));
         user.setName(userDto.getName());
         //email update
+        user.setEmail(userDto.getEmail());
         user.setAbout(userDto.getAbout());
         user.setGender(userDto.getGender());
 
